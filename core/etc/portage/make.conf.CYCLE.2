@@ -1,0 +1,10 @@
+CFLAGS="-O2 -pipe"
+CXXFLAGS="${CFLAGS}"
+CHOST="x86_64-gentoo-linux-uclibc"
+MAKEOPTS="-j17"
+PAX_MARKINGS="XT"
+
+USE="-cups -tk"
+USE_ORDER="env:conf:pkg:defaults:pkginternal:repo:env.d"
+
+source '/var/lib/layman/make.conf'
