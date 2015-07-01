@@ -7,8 +7,6 @@ mount
 populate 1
 runscript cycle.1.sh
 
-addoverlay blueness
-
 log stamp
 log CYCLE_2
 log stamp
