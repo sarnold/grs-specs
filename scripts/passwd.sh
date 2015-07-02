@@ -1,10 +1,5 @@
 #!/bin/bash -e
 
-trap "kill -9 $$" SIGTERM
-trap "kill -9 $$" SIGHUP
-trap "kill -9 $$" SIGKILL
-trap "kill -9 $$" SIGINT
-
 echo root:root | chpasswd
 
 useradd -m gentoo
