@@ -3,7 +3,7 @@
 import os
 import re
 
-from portage import settings
+import portage
 from grs.Execute import Execute
 
 def scan_profile_stack(pfile):
@@ -30,7 +30,7 @@ def get_blist():
     return ' '.join(blist)
 
 
-use_flags = '-* bindist build %s' % settings['BOOTSTRAP_USE']
+use_flags = '-* bindist build %s' % portage.settings['BOOTSTRAP_USE']
 subchroot = '/tmp/stage1root'
 cpu_flags = 'mmx sse sse2'
 emerge_env = { 'USE' : use_flags, 'ROOT' : subchroot, 'CPU_FLAGS_X86' : cpu_flags }
