@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/usr/bin/python3.4
 
 from portage import settings
 from grs.Execute import Execute
