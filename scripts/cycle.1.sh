@@ -2,10 +2,5 @@
 
 source /etc/profile
 env-update
-emerge -b1q portage
-emerge -b1q =app-portage/grs-9999
-emerge --unmerge sys-fs/udev
-emerge -b1q sys-fs/eudev
-install-worldconf
-emerge -bevq --keep-going --with-bdeps=y @world
-clean-worldconf
+USE="build" emerge -bkNu1q app-sys/portage
+ACCEPT_KEYWORDS="**" emerge -b1q =app-portage/grs-9999

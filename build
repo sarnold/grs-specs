@@ -1,49 +1,40 @@
-+log BEGIN
 log stamp
-log CYCLE_1
+log STAGE_1
 log stamp
 
 mount
 populate 1
 runscript cycle.1.sh
-
-log stamp
-log CYCLE_2
-log stamp
-
-populate 2
-runscript cycle.2.sh
-
-log stamp
-log Configure+Cleanup+Kernel
-log stamp
-
-runscript initrc.sh
-runscript passwd.sh
-unmount
-clean
-kernel
-
-log stamp
-log Tar_it
-log stamp
-
-tarit
-
-log stamp
-log Hash_it
-log stamp
-
-hashit
-
-+log stamp
-+log Extras
-+log stamp
-+
-+mount
-+populate 3
-+runscript cycle.2.sh
-+unmount
-+
-+log stamp
-+log END
+runscript cycle.1.py
+pivot tmp/stage1root
+#
+#log stamp
+#3log CYCLE_2
+#log stamp
+#
+#populate 2
+#runscript cycle.2.sh
+#
+#log stamp
+#log CYCLE_3
+#log stamp
+#
+#populate 3
+#runscript cycle.3.sh
+#
+#unmount
+#clean
+#
+#log stamp
+#log Tar_it
+#log stamp
+#
+#tarit
+#
+#log stamp
+#log Hash_it
+#log stamp
+#
+#hashit
+#
+#log stamp
