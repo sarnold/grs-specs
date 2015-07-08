@@ -27,20 +27,15 @@ log stamp
 
 runscript initrc.sh
 runscript passwd.sh
+runscript clean.sh
 unmount
-clean
 kernel
 
 log stamp
-log Tar_it
+log Tar+Hash
 log stamp
 
 tarit
-
-log stamp
-log Hash_it
-log stamp
-
 hashit
 
 +log stamp
