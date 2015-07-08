@@ -45,9 +45,6 @@ shutil.copy('/etc/portage/make.conf', '/tmp/stage1root/etc/portage')
 cmd = 'emerge -bkNu1q %s' % get_blist()
 Execute(cmd, timeout=None, extra_env=emerge_env)
 
-cmd = 'find /tmp/stage1root/usr/share -type d -iname info -exec rm -rf {} +'
-Execute(cmd, timeout=None, extra_env=emerge_env)
-cmd = 'find /tmp/stage1root/usr/share -type d -iname doc -exec rm -rf {} +'
-Execute(cmd, timeout=None, extra_env=emerge_env)
-cmd = 'find /tmp/stage1root/usr/share -type d -iname man -exec rm -rf {} +'
-Execute(cmd, timeout=None, extra_env=emerge_env)
+for d in ['info', 'doc', 'man', 'zoneinfo']:
+    cmd = 'find /tmp/stage1root/usr/share -type d -iname %s -exec rm -rf {} +' % d
+    Execute(cmd, timeout=None, extra_env=emerge_env)
