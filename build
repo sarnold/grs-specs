@@ -23,15 +23,15 @@ unmount
 clean
 tarit stage2-amd64-hardened
 hashit
-#
-#log stamp
-#log CYCLE_3
-#log stamp
-#
-#mount
-#populate 3
-#runscript cycle.3.sh
-#unmount
-#clean
-#tarit stage3-amd64-hardened
-#hashit
+
+log stamp
+log CYCLE_3
+log stamp
+
+mount
+populate 3
+runscript cycle.3.sh
+unmount
+clean
+tarit stage3-amd64-hardened
+hashit
