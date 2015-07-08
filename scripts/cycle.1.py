@@ -39,7 +39,7 @@ emerge_env = { 'USE' : use_flags, 'ROOT' : subchroot, 'CPU_FLAGS_X86' : cpu_flag
 cmd = 'emerge -bkNu1q sys-apps/baselayout'
 Execute(cmd, timeout=None, extra_env=emerge_env)
 
-os.path.makedirs('/tmp/stage1root/etc/portage', mode=0o755, exist_ok=True)
+os.makedirs('/tmp/stage1root/etc/portage', mode=0o755, exist_ok=True)
 shutil.copy('/etc/portage/make.conf', '/tmp/stage1root/etc/portage')
 
 cmd = 'emerge -bkNu1q %s' % get_blist()
