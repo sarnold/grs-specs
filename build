@@ -7,8 +7,8 @@ populate 1
 runscript cycle.1.sh
 runscript cycle.1.py
 pivot tmp/stage1root
+runscript clean.sh
 unmount
-clean
 tarit stage1-amd64-hardened
 hashit
 
@@ -19,8 +19,8 @@ log stamp
 mount
 populate 2
 runscript cycle.2.sh
+runscript clean.sh
 unmount
-clean
 tarit stage2-amd64-hardened
 hashit
 
@@ -31,7 +31,7 @@ log stamp
 mount
 populate 3
 runscript cycle.3.sh
+runscript clean.sh
 unmount
-clean
 tarit stage3-amd64-hardened
 hashit
