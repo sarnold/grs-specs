@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-/usr/portage/scripts/bootstrap.sh
+/usr/portage/scripts/bootstrap.sh -q
