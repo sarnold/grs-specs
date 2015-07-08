@@ -2,6 +2,7 @@
 
 import os
 import re
+import shutil
 
 import portage
 from grs.Execute import Execute
@@ -38,5 +39,15 @@ emerge_env = { 'USE' : use_flags, 'ROOT' : subchroot, 'CPU_FLAGS_X86' : cpu_flag
 cmd = 'emerge -bkNu1q sys-apps/baselayout'
 Execute(cmd, timeout=None, extra_env=emerge_env)
 
+os.path.makedirs('/tmp/stage1root/etc/portage', mode=0o755, exist_ok=True)
+shutil.copy('/etc/portage/make.conf', '/tmp/stage1root/etc/portage')
+
 cmd = 'emerge -bkNu1q %s' % get_blist()
+Execute(cmd, timeout=None, extra_env=emerge_env)
+
+cmd = 'find /tmp/stage1root/usr/share -type d -iname info -exec rm -rf {} +'
+Execute(cmd, timeout=None, extra_env=emerge_env)
+cmd = 'find /tmp/stage1root/usr/share -type d -iname doc -exec rm -rf {} +'
+Execute(cmd, timeout=None, extra_env=emerge_env)
+cmd = 'find /tmp/stage1root/usr/share -type d -iname man -exec rm -rf {} +'
 Execute(cmd, timeout=None, extra_env=emerge_env)
