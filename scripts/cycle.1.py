@@ -37,14 +37,14 @@ cpu_flags = 'mmx sse sse2'
 emerge_env = { 'USE' : use_flags, 'ROOT' : subchroot, 'CPU_FLAGS_X86' : cpu_flags }
 
 cmd = 'emerge -bkNu1q sys-apps/baselayout'
-Execute(cmd, timeout=None, extra_env=emerge_env)
+Execute(cmd, timeout=None, extra_env=emerge_env, logfile=None)
 
 os.makedirs('/tmp/stage1root/etc/portage', mode=0o755, exist_ok=True)
 shutil.copy('/etc/portage/make.conf', '/tmp/stage1root/etc/portage')
 
 cmd = 'emerge -bkNu1q %s' % get_blist()
-Execute(cmd, timeout=None, extra_env=emerge_env)
+Execute(cmd, timeout=None, extra_env=emerge_env, logfile=None)
 
 for d in ['info', 'doc', 'man', 'zoneinfo']:
     cmd = 'find /tmp/stage1root/usr/share -type d -iname %s -exec rm -rf {} +' % d
-    Execute(cmd, timeout=None, extra_env=emerge_env)
+    Execute(cmd, timeout=None, extra_env=emerge_env, logfile=None)
