@@ -6,6 +6,10 @@ emerge -b1q portage
 emerge -b1q argp-standalone
 emerge -b1q =app-portage/grs-9999
 
+emerge -b1q binutils
+emerge -b1q gcc
+emerge -b1q musl
+
 # This is from the tarball.
 rm -rf /etc/portage/package.use
 
