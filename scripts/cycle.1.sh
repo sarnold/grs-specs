@@ -4,4 +4,8 @@ source /etc/profile
 env-update
 emerge -b1q layman
 layman -L
-layman -a musl
+
+# Don't return exit 1 if we fail since
+# we may have already added the overlay
+layman -a musl || true
+layman -S
