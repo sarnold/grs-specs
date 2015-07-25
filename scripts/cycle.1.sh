@@ -1,11 +1,13 @@
 #!/bin/bash -e
 
-source /etc/profile
-env-update
-emerge -b1q portage
-emerge -b1q =app-portage/grs-9999
-emerge --unmerge sys-fs/udev
-emerge -b1q sys-fs/eudev
-install-worldconf
-emerge -bevq --keep-going --with-bdeps=y @world
-clean-worldconf
+echo "Do nothing."
+
+# This is just here to sync up with the other desktops systems.
+# It just makes life easier when doing a 'git diff' between branches.
+# But if we were to do the same thing, it would be roughly this ...
+
+#source /etc/profile
+#env-update
+#emerge -b1q binutils
+#emerge -b1q gcc
+#emerge -b1q glibc

@@ -15,6 +15,13 @@ populate 2
 runscript cycle.2.sh
 
 log stamp
+log CYCLE_3
+log stamp
+
+populate 3
+runscript cycle.3.sh
+
+log stamp
 log Configure+Cleanup+Kernel
 log stamp
 
@@ -36,8 +43,8 @@ hashit
 +log stamp
 +
 +mount
-+populate 3
-+runscript cycle.2.sh
++populate 4
++runscript cycle.3.sh
 +unmount
 +
 +log stamp
