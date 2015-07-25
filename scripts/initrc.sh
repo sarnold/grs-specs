@@ -1,6 +1,9 @@
 #!/bin/bash -e
 
+# We default to classical interface naming.
 ln -sf /etc/init.d/net.lo /etc/init.d/net.eth0
+touch /etc/udev/rules.d/80-net-name-slot.rules
+
 rc-update add alsasound default
 rc-update add cupsd default
 rc-update add fcron default
