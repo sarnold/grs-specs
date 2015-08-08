@@ -1,0 +1,58 @@
+From 15f0cb9e59b2fd4112236fc9abbb2bf3a29eca65 Mon Sep 17 00:00:00 2001
+From: "Anthony G. Basile" <blueness@gentoo.org>
+Date: Thu, 6 Aug 2015 04:11:03 -0400
+Subject: [PATCH 1/2] configure.ac: intelligently check for <execinfo.h>
+
+Currently, it is assume that only MINGW32 and CYGWIN on windows do
+not provide backtrace.  However, other libc's in the Linux world
+do not provide it either.  uClibc only provides it if configured
+to do so, and musl doesn't provide it at all.  As a result, the
+build fails on those systems.
+
+This patch checks for <execinfo.h> in configure.ac and skip its
+inclusion in fontforge/cvundoes.c if it is not available.
+
+Signed-off-by: Anthony G. Basile <blueness@gentoo.org>
+---
+ configure.ac         | 1 +
+ fontforge/cvundoes.c | 5 +++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index e998a6f..ebeaf85 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -377,6 +377,7 @@ AC_CHECK_HEADERS([strings.h sys/ioctl.h sys/socket.h sys/time.h unistd.h])
+ if test x"${i_do_want_iconv}" = xyes; then
+    AC_CHECK_HEADERS([iconv.h])
+ fi
++AC_CHECK_HEADERS([execinfo.h])
+ gl_INIT
+ 
+ #--------------------------------------------------------------------------
+diff --git a/fontforge/cvundoes.c b/fontforge/cvundoes.c
+index 5d84830..72a5b96 100644
+--- a/fontforge/cvundoes.c
++++ b/fontforge/cvundoes.c
+@@ -24,6 +24,7 @@
+  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
++#include "config.h"
+ #include "fontforgevw.h"
+ #include "views.h"
+ #include <math.h>
+@@ -33,8 +34,8 @@
+ #include "inc/gfile.h"
+ #include "psfont.h"
+ 
+-#if defined(__MINGW32__)||defined(__CYGWIN__)
+-// no backtrace on windows yet
++#ifndef HAVE_EXECINFO_H
++// no backtrace available
+ #else
+     #include <execinfo.h>
+ #endif
+-- 
+2.4.6
+
