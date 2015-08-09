@@ -46,6 +46,7 @@ hashit
 +populate 4
 +runscript cycle.3.sh
 +unmount
++kernel
 +
 +log stamp
 +log END
