@@ -4,7 +4,7 @@ source /etc/profile
 env-update
 emerge -b1q portage
 emerge -b1q argp-standalone
-emerge -b1q =app-portage/grs-9999
+emerge -b1q app-portage/grs
 
 emerge -b1q binutils
 emerge -b1q gcc
