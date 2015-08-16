@@ -35,7 +35,7 @@ index 973f343..4f1de12 100644
  
  #include "ustring.h"
  
--#ifdef _WIN32
+-#ifdef __MINGW32__
 +#ifndef HAVE_LOCALE_T
  #define BAD_LOCALE_HACK
  typedef char* locale_t;
