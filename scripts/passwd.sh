@@ -3,21 +3,21 @@
 # Set the root password to 'root'
 echo root:root | chpasswd
 
-# Create a user 'gentoo' and set
-# the password to 'gentoo'
-useradd -m gentoo
-echo gentoo:gentoo | chpasswd
+# Create a user 'thuser' and set
+# the password to 'thuser'
+useradd -m thuser
+echo thuser:thuser | chpasswd
 
-# Make user 'gentoo' a power user
-gpasswd -a gentoo disk
-gpasswd -a gentoo wheel
-gpasswd -a gentoo audio
-gpasswd -a gentoo video
-gpasswd -a gentoo floppy
-gpasswd -a gentoo tape
-gpasswd -a gentoo cdrom
-gpasswd -a gentoo cdrw
-gpasswd -a gentoo usb
+# Make user 'thuser' a power user
+gpasswd -a thuser disk
+gpasswd -a thuser wheel
+gpasswd -a thuser audio
+gpasswd -a thuser video
+gpasswd -a thuser floppy
+gpasswd -a thuser tape
+gpasswd -a thuser cdrom
+gpasswd -a thuser cdrw
+gpasswd -a thuser usb
 
 gpasswd -a portage wheel
 

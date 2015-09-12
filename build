@@ -1,52 +1,23 @@
-+log BEGIN
-log stamp
-log CYCLE_1
-log stamp
-
+log BEGIN
 mount
+
+log CYCLE_1
 populate 1
 runscript cycle.1.sh
 
-log stamp
 log CYCLE_2
-log stamp
-
 populate 2
 runscript cycle.2.sh
 
-log stamp
-log CYCLE_3
-log stamp
-
-populate 3
-runscript cycle.3.sh
-
-log stamp
 log Configure+Cleanup+Kernel
-log stamp
-
 runscript initrc.sh
 runscript passwd.sh
 runscript clean.sh
 unmount
 kernel
 
-log stamp
-log Tar+Hash
-log stamp
-
-tarit
+log ISO+Hash
+isoit
 hashit
 
-+log stamp
-+log Extras
-+log stamp
-+
-+mount
-+populate 4
-+runscript cycle.3.sh
-+unmount
-+kernel
-+
-+log stamp
-+log END
+log END
