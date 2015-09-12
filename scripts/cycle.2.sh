@@ -3,7 +3,8 @@
 source /etc/profile
 env-update
 install-worldconf
-emerge -buvNDq --keep-going --with-bdeps=y @world
+emerge -uvNDq --keep-going --with-bdeps=y @world
 clean-worldconf
-emerge -bq @preserved-rebuild
+emerge --unmerge app-portage/grs
+emerge -q @preserved-rebuild
 emerge --depclean

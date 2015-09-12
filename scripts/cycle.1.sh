@@ -2,10 +2,10 @@
 
 source /etc/profile
 env-update
-emerge -b1q portage
-emerge -b1q app-portage/grs
+emerge -1q portage
+emerge -1q app-portage/grs
 emerge --unmerge sys-fs/udev
-emerge -b1q sys-fs/eudev
+emerge -1q sys-fs/eudev
 install-worldconf
-emerge -bevq --keep-going --with-bdeps=y @world
+emerge -evq --keep-going --with-bdeps=y @world
 clean-worldconf
