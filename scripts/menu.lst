@@ -1,0 +1,4 @@
+timeout 5
+title TinHat
+kernel /boot/kernel
+initrd /boot/initramfs
