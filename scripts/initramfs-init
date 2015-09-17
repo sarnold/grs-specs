@@ -21,7 +21,7 @@ do
 	if [ "x$FOUND" == "x" ]
 	then
 		/bin/mount /dev/${CDROM} /mnt/cdrom
-		[ -f /mnt/cdrom/tinroot ] && FOUND=$CDROM || /bin/umount /dev/${CDROM}
+		[ -f /mnt/cdrom/rootfs ] && FOUND=$CDROM || /bin/umount /dev/${CDROM}
 	fi
 done
 
