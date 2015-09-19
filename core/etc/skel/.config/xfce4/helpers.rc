@@ -1,4 +1,4 @@
 TerminalEmulator=xfce4-terminal
-WebBrowser=epiphany
-MailReader=sylpheed-claws
+WebBrowser=firefox
+MailReader=sylpheed
 
