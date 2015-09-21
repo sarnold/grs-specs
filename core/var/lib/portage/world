@@ -13,7 +13,7 @@ app-text/evince
 app-portage/gentoolkit
 app-text/tree
 mail-client/nail
-mail-client/sylpheed
+mail-client/claws-mail
 mail-mta/postfix
 media-video/vlc
 media-gfx/ristretto
