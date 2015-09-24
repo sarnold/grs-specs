@@ -3,7 +3,7 @@
 source /etc/profile
 env-update
 emerge -1q portage
-emerge -1q app-portage/grs
+USE=bindist emerge -1q app-portage/grs
 emerge --unmerge sys-fs/udev
 emerge -1q sys-fs/eudev
 install-worldconf
