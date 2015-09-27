@@ -88,7 +88,7 @@
     <property name="plugin-5" type="string" value="clock"/>
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
-        <value type="string" value="sylpheed"/>
+        <value type="string" value="claws-mail"/>
         <value type="string" value="vlc"/>
         <value type="string" value="task manager"/>
         <value type="string" value="thunar"/>
