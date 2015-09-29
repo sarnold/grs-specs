@@ -3084,16 +3084,7 @@ CONFIG_SUNRPC_GSS=y
 # CONFIG_RPCSEC_GSS_KRB5 is not set
 # CONFIG_SUNRPC_DEBUG is not set
 # CONFIG_CEPH_FS is not set
-CONFIG_CIFS=y
-# CONFIG_CIFS_STATS is not set
-# CONFIG_CIFS_WEAK_PW_HASH is not set
-# CONFIG_CIFS_UPCALL is not set
-CONFIG_CIFS_XATTR=y
-# CONFIG_CIFS_POSIX is not set
-# CONFIG_CIFS_ACL is not set
-# CONFIG_CIFS_DEBUG is not set
-# CONFIG_CIFS_DFS_UPCALL is not set
-# CONFIG_CIFS_SMB2 is not set
+# CONFIG_CIFS is not set
 # CONFIG_NCP_FS is not set
 # CONFIG_CODA_FS is not set
 # CONFIG_AFS_FS is not set
