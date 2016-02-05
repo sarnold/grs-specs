@@ -1,0 +1,36 @@
+From 1ddacb790ba2d3957168cbb5465470f217c099a6 Mon Sep 17 00:00:00 2001
+From: "Anthony G. Basile" <blueness@gentoo.org>
+Date: Thu, 4 Feb 2016 17:04:29 +0000
+Subject: [PATCH] numpy/core/src/npymath/npy_math_complex.c.src: fix bad
+ #ifndef
+
+https://bugs.gentoo.org/show_bug.cgi?id=573824
+https://github.com/numpy/numpy/issues/7182
+---
+ numpy/core/src/npymath/npy_math_complex.c.src | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/numpy/core/src/npymath/npy_math_complex.c.src b/numpy/core/src/npymath/npy_math_complex.c.src
+index c4867e2..93b0991 100644
+--- a/numpy/core/src/npymath/npy_math_complex.c.src
++++ b/numpy/core/src/npymath/npy_math_complex.c.src
+@@ -184,8 +184,6 @@ npy_carg@c@(@ctype@ z)
+ #define SCALED_CEXP_LOWERL 11357.216553474703895L
+ #define SCALED_CEXP_UPPERL 22756.021937783004509L
+ 
+-#ifndef HAVE_CEXP@C@
+-
+ static
+ @ctype@
+ _npy_scaled_cexp@c@(@type@ x, @type@ y, npy_int expt)
+@@ -212,6 +210,7 @@ _npy_scaled_cexp@c@(@type@ x, @type@ y, npy_int expt)
+                          npy_ldexp@c@(mant * mantsin, expt + exsin));
+ }
+ 
++#ifndef HAVE_CEXP@C@
+ @ctype@
+ npy_cexp@c@(@ctype@ z)
+ {
+-- 
+2.7.0
+
