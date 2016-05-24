@@ -7,5 +7,5 @@ emerge -b1q app-cdr/cdrkit
 emerge -b1q virtual/cdrtools
 emerge -b1q app-portage/grs
 install-worldconf
-emerge -bevq --keep-going --with-bdeps=y @world
+emerge -bevq --keep-going --verbose-conflicts --with-bdeps=y @world
 clean-worldconf
