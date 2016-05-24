@@ -14,5 +14,5 @@ emerge -b1q musl
 rm -rf /etc/portage/package.use
 
 install-worldconf
-emerge -bevq --keep-going --with-bdeps=y @world
+emerge -bevq --keep-going --verbose-conflicts --with-bdeps=y @world
 clean-worldconf
