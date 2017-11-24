@@ -38,15 +38,5 @@ log stamp
 tarit
 hashit
 
-+log stamp
-+log Extras
-+log stamp
-+
-+mount
-+populate 4
-+runscript cycle.3.sh
-+unmount
-+kernel
-+
-+log stamp
+log stamp
 +log END
