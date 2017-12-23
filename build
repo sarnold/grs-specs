@@ -29,7 +29,7 @@ runscript initrc.sh
 runscript passwd.sh
 runscript clean.sh
 unmount
-kernel
+kernel x86_64
 
 log stamp
 log Tar+Hash
@@ -38,5 +38,15 @@ log stamp
 tarit
 hashit
 
-log stamp
++log stamp
++log Extras
++log stamp
++
++mount
++populate 4
++runscript cycle.3.sh
++unmount
++kernel x86_64
++
++log stamp
 +log END
