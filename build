@@ -14,7 +14,7 @@ runscript initrc.sh
 runscript passwd.sh
 runscript clean.sh
 unmount
-kernel
+kernel x86_64
 
 log ISO+Hash
 isoit
