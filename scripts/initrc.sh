@@ -14,4 +14,5 @@ rc-update add xdm default
 rc-update add avahi-daemon default
 rc-update add dbus default
 rc-update add samba default
+rc-update add sinfod default
 rc-update add syslog-ng default
