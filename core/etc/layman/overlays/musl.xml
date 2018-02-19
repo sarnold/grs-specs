@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo priority="50" quality="experimental" status="unofficial">
+    <name>musl</name>
+    <description>fork of musl development overlay</description>
+    <homepage>https://github.com/sarnold/musl</homepage>
+    <owner>
+      <email>nerdboy@gentoo.org</email>
+      <name>Gentoo developer</name>
+    </owner>
+    <source type="git">https://github.com/sarnold/musl.git</source>
+    <feed>https://github.com/sarnold/musl/commits/maint.atom</feed>
+  </repo>
+</repositories>
