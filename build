@@ -1,5 +1,5 @@
 +log BEGIN
-log stamp
++log stamp
 log CYCLE_1
 log stamp
 
@@ -11,14 +11,12 @@ log stamp
 log CYCLE_2
 log stamp
 
-populate 2
 runscript cycle.2.sh
 
 log stamp
 log CYCLE_3
 log stamp
 
-populate 3
 runscript cycle.3.sh
 
 log stamp
@@ -29,6 +27,7 @@ runscript initrc.sh
 runscript passwd.sh
 runscript clean.sh
 unmount
+
 kernel x86_64
 
 log stamp
@@ -38,13 +37,20 @@ log stamp
 tarit
 hashit
 
+log stamp
+log Iso+Hash
+log stamp
+
+netbootit cd
+hashit
+
 +log stamp
-+log Extras
++log Updates
 +log stamp
 +
 +mount
-+populate 4
-+runscript cycle.3.sh
++populate 1
++runscript cycle.4.sh
 +unmount
 +kernel x86_64
 +
