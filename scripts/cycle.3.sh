@@ -2,9 +2,11 @@
 
 source /etc/profile
 env-update
-install-worldconf
-layman -S
-emerge -buvNDq --keep-going --verbose-conflicts --with-bdeps=y @world
-clean-worldconf
+
+#install-worldconf
+#layman -S
+#emerge -buvNDq --keep-going --verbose-conflicts --with-bdeps=y @world
+#clean-worldconf
+
 emerge --depclean
-emerge -bq --keep-going @preserved-rebuild
+emerge @preserved-rebuild
