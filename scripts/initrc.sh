@@ -8,8 +8,7 @@ touch /etc/udev/rules.d/80-net-name-slot.rules
 chown portage:portage /usr/portage
 
 rc-update add alsasound default
-rc-update add cupsd default
-rc-update add fcron default
+rc-update add cronie default
 rc-update add net.eth0 default
 rc-update add postfix default
 rc-update add sshd default
