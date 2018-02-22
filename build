@@ -11,6 +11,7 @@ log stamp
 log CYCLE_2
 log stamp
 
+populate 2
 runscript cycle.2.sh
 
 runscript initrc.sh
