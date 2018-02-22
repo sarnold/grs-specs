@@ -13,20 +13,14 @@ log stamp
 
 runscript cycle.2.sh
 
-log stamp
-log CYCLE_3
-log stamp
-
-runscript cycle.3.sh
-
-log stamp
-log Configure+Cleanup+Kernel
-log stamp
-
 runscript initrc.sh
 runscript passwd.sh
 runscript clean.sh
 unmount
+
+log stamp
+log BuildKernel
+log stamp
 
 kernel x86_64
 
