@@ -44,7 +44,7 @@ hashit
 +log stamp
 +
 +mount
-+populate 1
++populate 3
 +runscript cycle.4.sh
 +unmount
 +kernel x86_64
