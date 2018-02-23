@@ -6,6 +6,11 @@ touch /etc/udev/rules.d/80-net-name-slot.rules
 
 # set perms for portage
 chown portage:portage /usr/portage
+chmod g+s /usr/portage
+
+# workaround for musl and ld.so
+touch /etc/ld.so.cache
+mkdir -p /etc/ld.so.conf.d
 
 rc-update add alsasound default
 rc-update add cronie default
