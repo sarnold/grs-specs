@@ -12,6 +12,7 @@ chmod g+s /usr/portage
 touch /etc/ld.so.cache
 mkdir -p /etc/ld.so.conf.d
 
+rc-update add acpid default
 rc-update add alsasound default
 rc-update add cronie default
 rc-update add net.eth0 default
