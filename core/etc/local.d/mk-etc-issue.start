@@ -1,0 +1,8 @@
+#! /bin/bash
+
+DATE=$(date +%Y%m%d)
+IP=$(ifconfig | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | head -n1)
+
+echo > /etc/issue
+echo "OrchardOS amd64 ${DATE} ${IP}" >> /etc/issue
+echo  >> /etc/issue
