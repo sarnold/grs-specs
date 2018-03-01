@@ -13,4 +13,5 @@ layman -L
 # Don't return exit 1 if we fail since
 # we may have already added the overlay
 layman -a musl || true
+layman -a arm_support || true
 layman -S
