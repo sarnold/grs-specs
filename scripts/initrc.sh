@@ -4,9 +4,10 @@
 ln -sf /etc/init.d/net.lo /etc/init.d/net.eth0
 touch /etc/udev/rules.d/80-net-name-slot.rules
 
-# set perms for portage
-chown portage:portage /usr/portage
-chmod g+s /usr/portage
+DATE=$(date +%Y%m%d)
+echo > /etc/issue
+echo "Gentoo GRS amd64 ${DATE} IP: \4{eth0}" >> /etc/issue
+echo >> /etc/issue
 
 # workaround for musl and ld.so
 touch /etc/ld.so.cache
@@ -21,6 +22,5 @@ rc-update add sshd default
 rc-update add xdm default
 rc-update add avahi-daemon default
 rc-update add dbus default
-rc-update add samba default
 rc-update add sinfod default
 rc-update add syslog-ng default
