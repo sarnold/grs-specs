@@ -20,6 +20,13 @@ log stamp
 
 runscript cycle.genkernel.sh
 
+log stamp
+log CYCLE_3
+log stamp
+
+populate 3
+runscript cycle.3.sh
+
 runscript initrc.sh
 runscript passwd.sh
 runscript clean.sh
