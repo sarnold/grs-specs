@@ -1,1 +1,1 @@
-../../usr/portage/profiles/hardened/linux/musl/amd64
+../../usr/portage/profiles/hardened/linux/musl/arm/armv7a
