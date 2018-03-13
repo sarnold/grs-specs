@@ -1,6 +1,8 @@
-CFLAGS="-O2 -pipe -fno-diagnostics-color"
+TUNE_FLAGS="-march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
+CFLAGS="${TUNE_FLAGS} -O2 -pipe -fno-diagnostics-color"
 CXXFLAGS="${CFLAGS}"
-CHOST="x86_64-gentoo-linux-musl"
+CHOST="armv7a-hardfloat-linux-musleabi"
+
 MAKEOPTS="-j5"
 
 PAX_MARKINGS="XT"
