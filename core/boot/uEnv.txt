@@ -1,0 +1,18 @@
+# uname -r and patched u-boot will find the dtb file
+uname_r=4.14.20-armv7-x4
+
+# otherwise set the filename relative to /boot
+#dtbfile=imx6dl-udoo.dtb
+
+# use the video arg to force a resolution if needed
+#cmdline=video=HDMI-A-1:1920x1080            
+
+# the following is required for booting the latest mainline kernels
+cmdline=uart_from_osc clk_ignore_unused
+
+# this works for console video
+#optargs=cma=16M console=tty1
+
+# accel. drm/xorg needs gpumem
+optargs=gpumem=256M net.ifnames=0 console=tty1
+

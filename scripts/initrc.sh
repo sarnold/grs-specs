@@ -5,15 +5,15 @@ ln -sf /etc/init.d/net.lo /etc/init.d/net.eth0
 touch /etc/udev/rules.d/80-net-name-slot.rules
 
 DATE=$(date +%Y%m%d)
+uname_m=$(uname -m)
 echo > /etc/issue
-echo "Gentoo GRS amd64 ${DATE} IP: \4{eth0}" >> /etc/issue
+echo "Gentoo GRS ${uname_m} ${DATE} IP: \4{eth0}" >> /etc/issue
 echo >> /etc/issue
 
 # workaround for musl and ld.so
 touch /etc/ld.so.cache
 mkdir -p /etc/ld.so.conf.d
 
-rc-update add acpid default
 rc-update add alsasound default
 rc-update add cronie default
 rc-update add net.eth0 default
