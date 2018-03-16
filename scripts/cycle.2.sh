@@ -11,10 +11,12 @@ install-worldconf
 emerge -b1q binutils
 binutils-config 2
 emerge -qC binutils:2.28.1
+source /etc/profile && env-update
 
 emerge -b1q gcc
 gcc-config 2
 emerge -qC gcc:5.4.0
+source /etc/profile && env-update
 
 emerge -b1q musl
 
