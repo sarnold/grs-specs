@@ -1,4 +1,4 @@
-TUNE_FLAGS="-march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
+TUNE_FLAGS="-march=armv7-a -mfpu=neon-fp16 -mfp16-format=ieee -mfloat-abi=hard"
 CFLAGS="${TUNE_FLAGS} -O2 -pipe -fno-diagnostics-color"
 CXXFLAGS="${CFLAGS}"
 CHOST="armv7a-hardfloat-linux-musleabi"

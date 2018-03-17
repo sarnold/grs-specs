@@ -1,4 +1,4 @@
-TUNE_FLAGS="-march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
+TUNE_FLAGS="-march=armv7-a -mfpu=neon-fp16 -mfp16-format=ieee -mfloat-abi=hard"
 CFLAGS="${TUNE_FLAGS} -O2 -pipe -fno-diagnostics-color"
 CXXFLAGS="${CFLAGS}"
 CHOST="armv7a-hardfloat-linux-musleabi"
@@ -11,7 +11,7 @@ PORTDIR="/usr/portage"
 DISTDIR="${PORTDIR}/distfiles"
 PKGDIR="${PORTDIR}/packages"
 
-SE="opengl gles2 egl gbm dri dri3 drm -samba -nss caps curl"
+USE="opengl gles2 egl gbm dri dri3 drm -samba -nss caps curl"
 
 INPUT_DEVICES="keyboard mouse evdev"
 VIDEO_CARDS="imx vivante fbdev"
