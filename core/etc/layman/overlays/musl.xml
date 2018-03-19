@@ -10,6 +10,7 @@
       <name>Gentoo developer</name>
     </owner>
     <source type="git">https://github.com/sarnold/musl.git</source>
+    <source type="git">git+ssh://git@github.com/sarnold/musl.git</source>
     <feed>https://github.com/sarnold/musl/commits/maint.atom</feed>
   </repo>
 </repositories>
