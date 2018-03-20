@@ -1,0 +1,11 @@
+--- ./bin/misc-functions.sh.orig	2018-03-19 00:15:16.765292172 -0700
++++ ./bin/misc-functions.sh	2018-03-19 00:16:25.901958170 -0700
+@@ -494,7 +494,7 @@
+ 				addwrite /selinux/context
+ 				addwrite /sys/fs/selinux/context
+ 
+-				/usr/sbin/setfiles -F "${file_contexts_path}" -r "${D}" "${D}"
++				/usr/sbin/setfiles -F -r "${D}" "${file_contexts_path}" "${D}"
+ 			) || die "Failed to set SELinux security labels."
+ 		else
+ 			# nonfatal, since merging can happen outside a SE kernel
