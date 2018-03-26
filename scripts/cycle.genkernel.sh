@@ -2,6 +2,7 @@
 
 source /etc/profile
 env-update
+export uname_r="4.14.20-armv7-x4"
 
 install-worldconf
 layman -S
@@ -15,10 +16,11 @@ mkdir -p /etc/ld.so.conf.d
 # slight workaround for genkernel
 ebuild /usr/portage/sys-apps/busybox/busybox-1.28.0.ebuild fetch
 
-genkernel kernel
+DEFAULT_KERNEL_CONFIG="/etc/kernels/kernel-config-arm-4.14.20-armv7-x4" \
+  genkernel kernel
 
 # post-genkernel arm workaround
 make -C /usr/src/linux dtbs_install
-ln -sf /boot/kernel-genkernel-arm-4.14.20-armv7-x4 /boot/vmlinuz-4.14.20-armv7-x4
+ln -sf kernel-genkernel-arm-${uname_r} /boot/vmlinuz-${uname_r}
 
 clean-worldconf
