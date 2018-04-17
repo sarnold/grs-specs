@@ -1,0 +1,9 @@
+# unmask all SIMD and THUMB assembler flags
+-cpu_flags_arm_neon
+-cpu_flags_arm_vfpv3
+-cpu_flags_arm_v7
+-cpu_flags_arm_v6
+-cpu_flags_arm_vfp
+-cpu_flags_arm_thumb
+-cpu_flags_arm_thumb2
+
