@@ -38,6 +38,13 @@ log stamp
 tarit
 hashit
 
+log stamp
+log Iso+Hash
+log stamp
+
+netbootit cd
+hashit
+
 +log stamp
 +log Extras
 +log stamp
